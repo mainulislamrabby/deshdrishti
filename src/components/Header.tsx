@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+
 
 const Header = () => {
   const date = new Date().toLocaleDateString("bn-BD", {
@@ -31,7 +31,7 @@ const Header = () => {
       </div>
 
       <div className="flex items-center gap-1 sm:gap-2 ml-auto">
-        <button className="btn btn-xs sm:btn-sm md:btn-md">সাইন ইন</button>
+        <button className="btn btn-xs sm:btn-sm md:btn-md hover:text-green-700">সাইন ইন</button>
         <button className="btn bg-green-700 text-white btn-xs sm:btn-sm md:btn-md">
           সাইন আপ
         </button>
