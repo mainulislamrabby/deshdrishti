@@ -3,7 +3,7 @@ import Link from "next/link";
 interface NavItem {
   slug: string;
   title: string;
-  topicId: string |null;
+  topicId: string | null;
   url: string;
   scrapable: boolean;
 }
@@ -11,10 +11,8 @@ interface NavItem {
 const Navbar = async () => {
   const res = await fetch("https://news-api-v2.vercel.app/api/categories");
   const categories = await res.json();
-  const categoriesNavData:NavItem[] = categories.data;
+  const categoriesNavData: NavItem[] = categories.data;
   const filterNavCategories = categoriesNavData.filter((nav) => nav.scrapable);
-
-  console.log(filterNavCategories);
 
   return (
     <div className="container mx-auto px-4">
