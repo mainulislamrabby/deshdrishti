@@ -12,8 +12,6 @@ interface NewsCardProps {
 }
 
 const NewsCard = ({ article }: NewsCardProps) => {
-  console.log(article);
-
   return (
     <div>
       <div className="card bg-base-100 w-full shadow-sm">
@@ -30,9 +28,7 @@ const NewsCard = ({ article }: NewsCardProps) => {
         <div className="card-body">
           <p className="text-red-700 font-semibold">{article.category}</p>
 
-          <h2 className="card-title">
-            {article.title}
-          </h2>
+          <h2 className="card-title">{article.title}</h2>
 
           <p>{article.description}</p>
         </div>

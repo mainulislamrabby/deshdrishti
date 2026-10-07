@@ -1,5 +1,6 @@
 import MainNews from "@/components/MainNews";
 import Marquee from "@/components/Marquee";
+import MostRead from "@/components/MostRead";
 import NewsCard from "@/components/NewsCard";
 
 interface OtherNews {
@@ -26,7 +27,7 @@ export default async function Home() {
     <div>
       <Marquee />
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-3">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3">
           {/* News Section */}
           <div className="col-span-1 lg:col-span-2">
             <MainNews news={mainNews} />
@@ -52,7 +53,9 @@ export default async function Home() {
           </div>
 
           {/* Most Read Section */}
-          <div className="col-span-1"></div>
+          <div className="col-span-1">
+            <MostRead/>
+          </div>
         </div>
       </div>
     </div>
