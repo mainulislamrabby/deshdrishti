@@ -1,10 +1,27 @@
+import MainNews from "@/components/MainNews";
 import Marquee from "@/components/Marquee";
 
-export default function Home() {
+export default async function Home() {
+  const res = await fetch("https://news-api-v2.vercel.app/api/news/sections");
+  const data = await res.json();
+  const sections = data.data;
+  const mainNews = sections[0].articles;
+
+
   return (
     <div>
       <Marquee />
-      ব্রাজিলের নির্বাচনের প্রথম দফায় ডানপন্থী ফ্লাভিও বলসোনারোর জয়
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-3">
+          {/* News Section */}
+          <div className="col-span-2">
+            <MainNews news={mainNews}/>
+          </div>
+
+          {/* Most Read Section */}
+          <div className="col-span-1"></div>
+        </div>
+      </div>
     </div>
   );
 }
