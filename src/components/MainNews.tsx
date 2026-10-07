@@ -12,7 +12,6 @@ interface News {
 const MainNews = ({ news }: { news: News[] }) => {
   const firstNews = news[0];
   const otherNews = news.slice(1);
-  console.log(otherNews);
 
   return (
     <div className="flex flex-col lg:flex-row justify-between gap-4">
